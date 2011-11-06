@@ -1,0 +1,34 @@
+update_interval  1.0
+
+font_load route3 ./fonts/route_3.ttf
+font_load saxMono ./fonts/saxmono.ttf
+background_image ./images/cherries_bg.png
+
+font Droid Sans Mono:size=14
+
+alignment bottom_left
+
+default_color white
+default_shade_color white
+default_outline_color lightgrey
+
+gap_y 100.0
+gap_x 20.0
+
+TEXT
+${font Droid Sans:size=24}${time %A, %d %B %Y}${font}
+${voffset 4}${battery_bar 4,430}
+${voffset 2}${fs_bar 4,430 /sdcard}
+${voffset 2}${cpubar 4,430}${voffset 4}
+${goto 220}${font saxMono:size=13}${printf "%-6.6s %-10.10s" ${top pid 1} ${top name 1}}${goto 390}${top cpu 1}
+${goto 220}${font saxMono:size=13}${printf "%-6.6s %-10.10s" ${top pid 2} ${top name 2}}${goto 380}${top cpu 2}
+${goto 220}${font saxMono:size=13}${printf "%-6.6s %-10.10s" ${top pid 3} ${top name 3}}${goto 370}${top cpu 3}
+${goto 220}${font saxMono:size=13}${printf "%-6.6s %-10.10s" ${top pid 4} ${top name 4}}${goto 360}${top cpu 4}
+${voffset 2}${goto 220}${membar 4,210}
+${goto 220}${font saxMono:size=13}${printf "%-6.6s %-10.10s" ${top_mem pid 1} ${top_mem name 1}}${goto 360}${top_mem mem 1}
+${goto 220}${font saxMono:size=13}${printf "%-6.6s %-10.10s" ${top_mem pid 2} ${top_mem name 2}}${goto 370}${top_mem mem 2}
+${goto 220}${font saxMono:size=13}${printf "%-6.6s %-10.10s" ${top_mem pid 3} ${top_mem name 3}}${goto 380}${top_mem mem 3}
+${goto 220}${font saxMono:size=13}${printf "%-6.6s %-10.10s" ${top_mem pid 4} ${top_mem name 4}}${goto 390}${top_mem mem 4}${font}
+${voffset -130}${font route3:size=120}${time %k}${font route3:size=90}${voffset -30}${time %M}${font}
+
+# vim:set ft=conkyrc:

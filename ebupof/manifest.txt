@@ -1,0 +1,3 @@
+name: ebupof
+config-file: mossrc
+description: Adapated from http://browse.deviantart.com/?qh=&section=&q=conky#/dzs1oi

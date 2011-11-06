@@ -1,0 +1,52 @@
+update_interval  1.0
+
+background_image images/gg_bg.png
+
+font_load Impact fonts/Impact.ttf
+font_load Poky fonts/Poky.ttf
+font_load StyleBats fonts/StyleBats.ttf
+
+font Droid Sans Mono:size=14
+
+fontHeader Droid Sans:size=14
+fontIcon Poky:size=30
+fontPerc Impact:size=25
+
+alignment bottom_left
+gap_y 60.0
+gap_x 10.0
+
+default_color #668866
+default_shade_color #999999
+default_outline_color #999999
+
+# Custom colors using colorN
+color1 #C18C24
+
+TEXT
+${font Impact:size=30}${goto 5}${color1}${time %T}${color}${goto 125}${font Impact:size=25}${time %a %d %b %Y}${font}
+${voffset 4}${goto 5}Desk: ${color1}${sysname} (${machine})${color} UPT: ${color1}${uptime}$color
+
+# File System
+${vgoto 70}${goto 0}${font Icon}y${font}${offset 20}/System
+${voffset 5}${goto 0}${fs_bar 5,30 /system}${voffset -3}${goto 50}${font Header}${color1}${fs_used_perc /system}%${color}
+
+${vgoto 70}${goto 150}${font Icon}y${font}${offset 20}/data
+${voffset 5}${goto 150}${fs_bar 5,30 /data}${voffset -3}${goto 200}${font Header}${color1}${fs_used_perc /data}%${color}
+
+${vgoto 70}${goto 300}${font Icon}y${font}${offset 20}/sdcard
+${voffset 5}${goto 300}${fs_bar 5,30 /sdcard}${voffset -3}${goto 350}${font Header}${color1}${fs_used_perc /sdcard}%${color}
+
+# Memory
+${vgoto 130}${font Icon}M${font Perc}${color1}${memperc}%${color}${font}${goto 120}${voffset -10}${color1}${mem}${goto 120}${voffset 35}${color}${membar 5,80}
+${voffset -15}${goto 5}${font StyleBats:size=14}i${font}${voffset -3} SWAP: ${color1}${swapperc}%$color - ${color1}$swap$color
+
+# CPU
+${vgoto 200}${font Icon}P${voffset -3}${font Perc}${color1}${goto 30}${cpu}%
+${voffset 5}${cpugraph 20,80, #C18C24 #C18C24}
+${voffset -65}${goto 120}${color1}${font}${printf "%-20.20s %-10.10s" ${top name 1} ${top cpu 1}}$color
+${goto 120}${printf "%-20.20s %-10.10s" ${top name 2} ${top cpu 2}}
+${goto 120}${printf "%-20.20s %-10.10s" ${top name 3} ${top cpu 3}}
+${goto 120}${printf "%-20.20s %-10.10s" ${top name 4} ${top cpu 4}}
+
+# vim:set ft=conkyrc:

@@ -1,0 +1,55 @@
+background_color #222222
+
+font Droid Sans:size=12
+update_interval 1.0
+default_color white
+default_shade_color white
+default_outline_color green
+alignment top_right
+uppercase yes
+gap_x 12
+gap_y 50
+
+TEXT
+${color white}SYSTEM ${hr 1}${color}
+
+Hostname: $alignr$nodename
+Kernel: $alignr$kernel
+Uptime: $alignr$uptime
+
+CPU: ${alignr}${freq} MHz
+Processes: ${alignr}$processes ($running_processes running)
+Load: ${alignr}$loadavg
+
+CPU ${alignr}${cpu}%
+${cpubar 4}
+
+Ram ${alignr}$mem / $memmax ($memperc%)
+${membar 4}
+Swap ${alignr}$swap / $swapmax ($swapperc%)
+${swapbar 4}
+
+Highest CPU${alignr}CPU% MEM%
+${length 18 18 ${top name 1}}${alignr}${length 4 4 ${top cpu 1}} ${length 4 4 ${top mem 1}}
+${length 18 18 ${top name 2}}${alignr}${length 4 4 ${top cpu 2}} ${length 4 4 ${top mem 2}}
+${length 18 18 ${top name 3}}${alignr}${length 4 4 ${top cpu 3}} ${length 4 4 ${top mem 3}}
+
+Highest MEM${alignr}CPU% MEM%
+${length 18 18 ${top_mem name 1}}${alignr}${length 4 4 ${top_mem cpu 1}} ${length 4 4 ${top_mem mem 1}}
+${length 18 18 ${top_mem name 2}}${alignr}${length 4 4 ${top_mem cpu 2}} ${length 4 4 ${top_mem mem 2}}
+${length 18 18 ${top_mem name 3}}${alignr}${length 4 4 ${top_mem cpu 3}} ${length 4 4 ${top_mem mem 3}}
+
+${color white}Filesystem ${hr 1}${color}
+
+System: ${alignr}${fs_free /system} / ${fs_size /system}
+${fs_bar 4 /system}
+Data: ${alignr}${fs_free /data} / ${fs_size /data}
+${fs_bar 4 /data}
+Sdcard: ${alignr}${fs_free /sdcard} / ${fs_size /sdcard}
+${fs_bar 4 /sdcard}
+
+${color white}NETWORK ${hr 1}${color}
+
+Down ${downspeed tiwlan0} k/s ${alignr}Up ${upspeed tiwlan0} k/s
+${downspeedgraph tiwlan0 25,107 #ffffff #ffffff} ${alignr}${upspeedgraph tiwlan0 25,107 #ffffff #ffffff}
+Total ${totaldown tiwlan0} ${alignr}Total ${totalup tiwlan0}
