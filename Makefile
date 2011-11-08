@@ -5,7 +5,7 @@ all: pkgs
 
 pkgs: ${PKGS}
 	@ for i in $^  ; do \
-		zip -r $$i.${EXT} $$i; \
+		zip -r $$i.${EXT} $$i -x */ss.png; \
 	done
 
 clean:
