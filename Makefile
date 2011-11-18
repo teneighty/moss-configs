@@ -1,4 +1,4 @@
-EXT=mba
+EXT=mpk
 PKGS=cherries goldgrey ebupof
 
 all: pkgs
