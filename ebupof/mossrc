@@ -55,8 +55,8 @@ ${downspeedgraph tiwlan0 25,107 #ffffff #ffffff} ${alignr}${upspeedgraph tiwlan0
 Total ${totaldown tiwlan0} ${alignr}Total ${totalup tiwlan0}
 
 IP${alignr}RPORT
-${tcp_portmon 1 65535 rip  0}${alignr 1}${tcp_portmon 1 65535 rport  0}
-${tcp_portmon 1 65535 rip  1}${alignr 1}${tcp_portmon 1 65535 rport  1}
-${tcp_portmon 1 65535 rip  2}${alignr 1}${tcp_portmon 1 65535 rport  2}
-${tcp_portmon 1 65535 rip  3}${alignr 1}${tcp_portmon 1 65535 rport  3}
-${tcp_portmon 1 65535 rip  4}${alignr 1}${tcp_portmon 1 65535 rport  4}
+${tcp_portmon 1 65535 rip  0}${alignr}${tcp_portmon 1 65535 rport  0}
+${tcp_portmon 1 65535 rip  1}${alignr}${tcp_portmon 1 65535 rport  1}
+${tcp_portmon 1 65535 rip  2}${alignr}${tcp_portmon 1 65535 rport  2}
+${tcp_portmon 1 65535 rip  3}${alignr}${tcp_portmon 1 65535 rport  3}
+${tcp_portmon 1 65535 rip  4}${alignr}${tcp_portmon 1 65535 rport  4}
