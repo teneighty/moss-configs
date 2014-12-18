@@ -24,6 +24,7 @@ Load: ${alignr}$loadavg
 CPU ${alignr}${cpu}%
 ${cpubar 4}
 
+Entropy: ${alignr}$entropy_avail / $entropy_poolsize ($entropy_perc)
 Ram ${alignr}$mem / $memmax ($memperc%)
 ${membar 4}
 Swap ${alignr}$swap / $swapmax ($swapperc%)
