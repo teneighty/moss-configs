@@ -51,9 +51,9 @@ ${fs_bar 4 /sdcard}
 
 ${color white}NETWORK ${hr 1}${color}
 
-Down ${downspeed tiwlan0} k/s ${alignr}Up ${upspeed tiwlan0} k/s
-${downspeedgraph tiwlan0 25,107 #ffffff #ffffff} ${alignr}${upspeedgraph tiwlan0 25,107 #ffffff #ffffff}
-Total ${totaldown tiwlan0} ${alignr}Total ${totalup tiwlan0}
+Down ${printf "" ${devname dev0}}${downspeed dev0} k/s ${alignr}Up ${upspeed dev0} k/s
+${downspeedgraph dev0 25,107 #ffffff #ffffff} ${alignr}${upspeedgraph dev0 25,107 #ffffff #ffffff}
+Total ${totaldown dev0} ${alignr}Total ${totalup dev0}
 
 IP${alignr}RPORT
 ${tcp_portmon 1 65535 rip  0}${alignr}${tcp_portmon 1 65535 rport  0}
