@@ -22,13 +22,13 @@ Processes: ${alignr}$processes ($running_processes running)
 Load: ${alignr}$loadavg
 
 CPU ${alignr}${cpu}%
-${cpubar 4}
+${cpubar 8}
 
 Entropy: ${alignr}$entropy_avail / $entropy_poolsize ($entropy_perc)
 Ram ${alignr}$mem / $memmax ($memperc%)
-${membar 4}
+${membar 8}
 Swap ${alignr}$swap / $swapmax ($swapperc%)
-${swapbar 4}
+${swapbar 8}
 
 Highest CPU${alignr}CPU% MEM%
 ${length 18 18 ${top name 1}}${alignr}${length 4 4 ${top cpu 1}} ${length 4 4 ${top mem 1}}
@@ -43,17 +43,21 @@ ${length 18 18 ${top_mem name 3}}${alignr}${length 4 4 ${top_mem cpu 3}} ${lengt
 ${color white}Filesystem ${hr 1}${color}
 
 System: ${alignr}${fs_free /system} / ${fs_size /system}
-${fs_bar 4 /system}
+${fs_bar 8 /system}
 Data: ${alignr}${fs_free /data} / ${fs_size /data}
-${fs_bar 4 /data}
-Sdcard: ${alignr}${fs_free /sdcard} / ${fs_size /sdcard}
-${fs_bar 4 /sdcard}
+${fs_bar 8 /data}
 
 ${color white}NETWORK ${hr 1}${color}
 
-Down ${printf "" ${devname dev0}}${downspeed dev0} k/s ${alignr}Up ${upspeed dev0} k/s
-${downspeedgraph dev0 25,107 #ffffff #ffffff} ${alignr}${upspeedgraph dev0 25,107 #ffffff #ffffff}
+${color lightgrey}${devname dev0}${color}
+Down ${downspeed dev0} k/s ${alignr}Up ${upspeed dev0} k/s
+${downspeedgraph dev0 50,200 #ffffff #ffffff} ${alignr}${upspeedgraph dev0 50,200 #ffffff #ffffff}
 Total ${totaldown dev0} ${alignr}Total ${totalup dev0}
+
+${color lightgrey}${devname dev1}${color}
+Down ${downspeed dev1} k/s ${alignr}Up ${upspeed dev1} k/s
+${downspeedgraph dev1 50,200 #ffffff #ffffff} ${alignr}${upspeedgraph dev1 50,200 #ffffff #ffffff}
+Total ${totaldown dev1} ${alignr}Total ${totalup dev1}
 
 IP${alignr}RPORT
 ${tcp_portmon 1 65535 rip  0}${alignr}${tcp_portmon 1 65535 rport  0}
